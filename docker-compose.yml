@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  bot:
+    image: 'ghcr.io/apinat/impostor:latest'
+    depends_on: 
+        - postgres
+    environment: 
+        DATABASE_URL: postgresql://postgres:mysecretpassword@postgres:5432/postgres
+        DISCORD_TOKEN: DISCORD_TOKEN
+        crewmate_red: crewmate_red:761211569635459092
+        crewmate_blue: crewmate_blue:761211569546985502
+        crewmate_green: crewmate_green:761211569744904232
+        crewmate_pink: crewmate_pink:761211569379999806
+        crewmate_orange: crewmate_orange:761211569606361127
+        crewmate_yellow: crewmate_yellow:761211569950294046
+        crewmate_black: crewmate_black:761211569597710356
+        crewmate_white: crewmate_white:761211569950162985
+        crewmate_purple: crewmate_purple:761211569282744332
+        crewmate_brown: crewmate_brown:761211569467818015
+        crewmate_cyan: crewmate_cyan:761211569744510976
+        crewmate_lime: crewmate_lime:761211569555636226
+        crewmate_red_dead: crewmate_red_dead:761987905370980372
+        crewmate_blue_dead: crewmate_blue_dead:761987905375174676
+        crewmate_green_dead: crewmate_green_dead:761987905358397470
+        crewmate_pink_dead: crewmate_pink_dead:761987905363116052
+        crewmate_orange_dead: crewmate_orange_dead:761987905392345098
+        crewmate_yellow_dead: crewmate_yellow_dead:761987905391951923
+        crewmate_black_dead: crewmate_black_dead:761987905362984970
+        crewmate_white_dead: crewmate_white_dead:761987905082097705
+        crewmate_purple_dead: crewmate_purple_dead:761987905244889119
+        crewmate_brown_dead: crewmate_brown_dead:761987905500610628
+        crewmate_cyan_dead: crewmate_cyan_dead:761987905459322901
+        crewmate_lime_dead: crewmate_lime_dead:761987905064402985
+        GROUPING_DISABLED_EMOJI: <:impostor_grouping_disabled:761985590123954176>
+        GROUPING_ENABLED_EMOJI: <:impostor_grouping_enabled:761985589784215565>
+        GROUPING_TOGGLE_EMOJI: toggle_impostor_grouping:761987527493943326
+        LEAVE_EMOJI: leave_lobby:762751494495666207
+  postgres:
+    image: 'postgres:latest'
+    environment:
+        POSTGRES_PASSWORD: mysecretpassword
