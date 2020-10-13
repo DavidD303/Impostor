@@ -17,6 +17,5 @@ WORKDIR /app
 COPY --from=build-client /out ./client
 COPY --from=build-bot /build ./bot
 ENV AU_CLIENT_DIR /app/client
-RUN npm install -g knex
 WORKDIR /app/bot
-CMD sleep 5 && knex migrate:latest && node ./dist/index.js
+CMD sleep 5 && node ./dist/index.js
