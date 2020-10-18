@@ -48,7 +48,7 @@ export async function createEmptyNewSession(
     const message = await msg.channel.createMessage({
         embed: {
             color: LOADING,
-            description: `<a:loading:572067799535452171> Attempting to connect to lobby \`${code}\` on ${region}...`,
+            description: `${process.env.LOADING_EMOJI} Attempting to connect to lobby \`${code}\` on ${region}...`,
         },
     });
 

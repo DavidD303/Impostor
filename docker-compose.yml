@@ -35,6 +35,7 @@ services:
         GROUPING_ENABLED_EMOJI: <:impostor_grouping_enabled:761985589784215565>
         GROUPING_TOGGLE_EMOJI: toggle_impostor_grouping:761987527493943326
         LEAVE_EMOJI: leave_lobby:762751494495666207
+        LOADING_EMOJI: <a:loading:572067799535452171>
   postgres:
     image: 'postgres:latest'
     environment:
